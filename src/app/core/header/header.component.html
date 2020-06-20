@@ -1,5 +1,5 @@
 <header>
-  <mat-toolbar [class.mat-elevation-z8]="true">
+  <mat-toolbar [class.mat-elevation-z10]="true">
     <mat-toolbar-row fxLayoutAlign="space-between center">
       <div fxLayout="row">
         <button mat-button class="app-name" [routerLink]="['/']">
@@ -7,8 +7,13 @@
         </button>
         <!--buttons disappear on Xs devices-->
         <div *ngIf="!deviceXs" fxLayout="row">
-          <button mat-button [routerLink]="['module1']">Module 1</button>
-          <button mat-button [routerLink]="['route2']">Route 02</button>
+          <button
+            mat-button
+            [routerLink]="['module-navigator/wellcome-navigator']"
+          >
+            Module 1
+          </button>
+          <button mat-button [routerLink]="['module-two']">Module 2</button>
           <button mat-button [routerLink]="['route3']">Route 03</button>
         </div>
         <!---->
@@ -32,8 +37,8 @@
     </mat-toolbar-row>
     <!--mat-toolbar-row displayed on Xs devices-->
     <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between center">
-      <button mat-button [routerLink]="['module1']">Module 1</button>
-      <button mat-button [routerLink]="['route2']">Route 02</button>
+      <button mat-button [routerLink]="['module-navigator']">Module 1</button>
+      <button mat-button [routerLink]="['module-two']">Module 2</button>
       <button mat-button [routerLink]="['route3']">Route 03</button>
     </mat-toolbar-row>
     <!---->

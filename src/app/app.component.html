@@ -1,5 +1,9 @@
-<div fxLayout="column" fxLayoutAlign="space-between stretch">
-  <app-header [deviceXs]="deviceXs"></app-header>
-  <app-content></app-content>
-  <app-footer [deviceXs]="deviceXs"></app-footer>
+<div fxLayout="column" fxLayoutAlign="space-between none">
+  <div>
+    <app-header [deviceXs]="deviceXs"></app-header>
+    <app-content [deviceXs]="deviceXs"></app-content>
+  </div>
+  <div>
+    <app-footer [deviceXs]="deviceXs"></app-footer>
+  </div>
 </div>
