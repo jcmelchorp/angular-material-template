@@ -16,7 +16,7 @@ import { AppMaterialModule } from './app-material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    AppMaterialModule
+    AppMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
