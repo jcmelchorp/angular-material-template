@@ -14,15 +14,13 @@
   </button>
   <span>Module 2</span>
 </mat-toolbar>
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container>
   <mat-sidenav
     #sidenavtwo
-    class="sidenav"
     [opened]="deviceMd"
     role="navigation"
     [mode]="deviceMd ? 'side' : 'over'"
   >
-    <mat-toolbar>Menu Modulo 2</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
       <a mat-list-item href="#">Link 2</a>
