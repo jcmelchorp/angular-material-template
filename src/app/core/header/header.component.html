@@ -2,13 +2,15 @@
   <mat-toolbar [class.mat-elevation-z10]="true">
     <mat-toolbar-row fxLayoutAlign="space-between center">
       <div fxLayout="row">
-        <button mat-button class="app-name" [routerLink]="['/']">
-          <fa-icon [icon]="cat"></fa-icon>&nbsp;App-name
+        <button mat-button [routerLink]="['/']">
+          <fa-icon [icon]="virus" size="2x"></fa-icon>
         </button>
         <!--buttons disappear on Xs devices-->
         <div *ngIf="!deviceXs" fxLayout="row">
           <button mat-button [routerLink]="['module-two']">Module 2</button>
-          <button mat-button [routerLink]="['statistics']">Statistics</button>
+          <button mat-button [routerLink]="['statistics/current']">
+            Datos
+          </button>
         </div>
         <!---->
       </div>
@@ -32,7 +34,7 @@
     <!--mat-toolbar-row displayed on Xs devices-->
     <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between center">
       <button mat-button [routerLink]="['module-two']">Module 2</button>
-      <button mat-button [routerLink]="['statistics']">Statistics</button>
+      <button mat-button [routerLink]="['statistics']">Datos</button>
     </mat-toolbar-row>
     <!---->
   </mat-toolbar>

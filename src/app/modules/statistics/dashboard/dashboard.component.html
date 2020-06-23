@@ -9,7 +9,7 @@
 </div>
 <div
   *ngIf="!isLoading"
-  class="pl-3 pr-3"
+  class="pl-3 pr-3 pb-5"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
   fxLayoutGap="25px"
@@ -33,27 +33,24 @@
     </mat-card-header>
     <mat-card-content>
       <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>
-          Confirmados:
+        <div fxLayout="column">
           <h3 class="badge badge-success">
             {{ mexico.TotalConfirmed | number }}
           </h3>
-          Recuperados:
           <h3 class="badge badge-info">
             {{ mexico.TotalRecovered | number }}
           </h3>
-          Muertes:
           <h3 class="badge badge-danger">{{ mexico.TotalDeaths | number }}</h3>
         </div>
         <div>
           <canvas
             baseChart
             [data]="mexicoPieData"
-            [labels]="mexicoPieLabels"
-            [chartType]="mexicoPieType"
-            [options]="mexicoPieOptions"
-            [plugins]="mexicoPiePlugins"
-            [legend]="mexicoPieLegend"
+            [labels]="pieLabels"
+            [chartType]="pieType"
+            [options]="pieOptions"
+            [plugins]="piePlugins"
+            [legend]="pieLegend"
             [colors]="pieColors"
           >
           </canvas>
@@ -74,59 +71,29 @@
       <mat-card-subtitle>{{ summary.Date | date }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <div fxLayoutAlign="space-between center">
-        <div>
-          Confirmados:
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="column">
           <h3 class="badge badge-success">
             {{ global.TotalConfirmed | number }}
           </h3>
-          Recuperados:
           <h3 class="badge badge-info">
             {{ global.TotalRecovered | number }}
           </h3>
-          Muertes:
           <h3 class="badge badge-danger">{{ global.TotalDeaths | number }}</h3>
         </div>
         <div>
           <canvas
             baseChart
             [data]="globalPieData"
-            [labels]="globalPieLabels"
-            [chartType]="globalPieType"
-            [options]="globalPieOptions"
-            [plugins]="globalPiePlugins"
-            [legend]="globalPieLegend"
+            [labels]="pieLabels"
+            [chartType]="pieType"
+            [options]="pieOptions"
+            [plugins]="piePlugins"
+            [legend]="pieLegend"
             [colors]="pieColors"
           >
           </canvas>
         </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
-  <mat-card
-    [class.mat-elevation-z6]="true"
-    class="my-2"
-    fxFlex="0 1 calc(50% - 25px)"
-    fxFlex.lt-md="0 1 calc(100% - 25px)"
-    fxFlex.lt-sm="100%"
-  >
-    <mat-card-header>
-      <mat-card-title>Timeline</mat-card-title>
-      <mat-card-subtitle></mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <div>
-        <canvas
-          baseChart
-          [datasets]="lineChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          [colors]="lineChartColors"
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins"
-        >
-        </canvas>
       </div>
     </mat-card-content>
   </mat-card>
