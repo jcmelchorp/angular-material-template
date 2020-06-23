@@ -18,9 +18,8 @@
   <mat-card
     [class.mat-elevation-z6]="true"
     class="my-2"
-    fxFlex="0 1 calc(25% - 25px)"
-    fxFlex.lt-md="0 1 calc(50% - 25px)"
-    fxFlex.lt-sm="100%"
+    fxFlex="0 1 calc(50% - 25px)"
+    fxFlex.lt-md="100%"
   >
     <mat-card-header>
       <mat-icon
@@ -29,22 +28,45 @@
         aria-hidden="false"
         aria-label="mexico flag icon"
       ></mat-icon>
-      <mat-card-title>{{ country.Country | titlecase }}</mat-card-title>
-      <mat-card-subtitle>{{ country.Date | date }}</mat-card-subtitle>
+      <mat-card-title>{{ mexico.Country | titlecase }}</mat-card-title>
+      <mat-card-subtitle>{{ mexico.Date | date }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>{{ country.TotalConfirmed | number }}</p>
-      <p>{{ country.TotalRecovered | number }}</p>
-      <p>{{ country.TotalDeaths | number }}</p>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+          Confirmados:
+          <h3 class="badge badge-success">
+            {{ mexico.TotalConfirmed | number }}
+          </h3>
+          Recuperados:
+          <h3 class="badge badge-info">
+            {{ mexico.TotalRecovered | number }}
+          </h3>
+          Muertes:
+          <h3 class="badge badge-danger">{{ mexico.TotalDeaths | number }}</h3>
+        </div>
+        <div>
+          <canvas
+            baseChart
+            [data]="mexicoPieData"
+            [labels]="mexicoPieLabels"
+            [chartType]="mexicoPieType"
+            [options]="mexicoPieOptions"
+            [plugins]="mexicoPiePlugins"
+            [legend]="mexicoPieLegend"
+            [colors]="pieColors"
+          >
+          </canvas>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 
   <mat-card
     [class.mat-elevation-z6]="true"
     class="my-2"
-    fxFlex="0 1 calc(25% - 25px)"
-    fxFlex.lt-md="0 1 calc(50% - 25px)"
-    fxFlex.lt-sm="100%"
+    fxFlex="0 1 calc(50% - 25px)"
+    fxFlex.lt-md="100%"
   >
     <mat-card-header>
       <fa-icon mat-card-avatar [icon]="world" size="3x"></fa-icon>
@@ -52,9 +74,33 @@
       <mat-card-subtitle>{{ summary.Date | date }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>{{ summary.Global.TotalConfirmed | number }}</p>
-      <p>{{ summary.Global.TotalRecovered | number }}</p>
-      <p>{{ summary.Global.TotalDeaths | number }}</p>
+      <div fxLayoutAlign="space-between center">
+        <div>
+          Confirmados:
+          <h3 class="badge badge-success">
+            {{ global.TotalConfirmed | number }}
+          </h3>
+          Recuperados:
+          <h3 class="badge badge-info">
+            {{ global.TotalRecovered | number }}
+          </h3>
+          Muertes:
+          <h3 class="badge badge-danger">{{ global.TotalDeaths | number }}</h3>
+        </div>
+        <div>
+          <canvas
+            baseChart
+            [data]="globalPieData"
+            [labels]="globalPieLabels"
+            [chartType]="globalPieType"
+            [options]="globalPieOptions"
+            [plugins]="globalPiePlugins"
+            [legend]="globalPieLegend"
+            [colors]="pieColors"
+          >
+          </canvas>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
   <mat-card
@@ -68,6 +114,20 @@
       <mat-card-title>Timeline</mat-card-title>
       <mat-card-subtitle></mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content> </mat-card-content>
+    <mat-card-content>
+      <div>
+        <canvas
+          baseChart
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+        >
+        </canvas>
+      </div>
+    </mat-card-content>
   </mat-card>
 </div>

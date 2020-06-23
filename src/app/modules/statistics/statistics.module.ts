@@ -9,9 +9,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StatisticsComponent } from './statistics.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApiService } from './services/api.service';
+import { ChartsModule } from 'ng2-charts';
+import { MyLineChartComponent } from './my-line-chart/my-line-chart.component';
+import { MyCircleComponent } from './my-circle/my-circle.component';
+import { MyPieComponent } from './my-pie/my-pie.component';
 
 @NgModule({
-  declarations: [StatisticsComponent, DashboardComponent],
+  declarations: [StatisticsComponent, DashboardComponent, MyLineChartComponent, MyCircleComponent, MyPieComponent],
   imports: [
     CommonModule,
     StatisticsRoutingModule,
@@ -19,6 +23,7 @@ import { ApiService } from './services/api.service';
     FlexLayoutModule,
     FontAwesomeModule,
     HttpClientModule,
+    ChartsModule,
   ],
   providers: [ApiService],
 })
