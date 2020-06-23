@@ -5,129 +5,66 @@
   <p class="mat-h1">Statistical panel for COVID-19 disease</p>
 </div>
 
-<p class="mat-h1 text-center">
-  <fa-icon [icon]="world" size="lg"></fa-icon>&nbsp;Global
-  <label class="badge badge-success">{{ summary.Date | date }}</label>
-</p>
-
 <div
+  class="pl-3 pr-3"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
-  fxLayoutGap="10px"
+  fxLayoutGap="25px"
   fxLayoutAlign="flex-start"
 >
   <mat-card
     [class.mat-elevation-z6]="true"
     class="my-2"
-    fxFlex="0 1 calc(33.3% - 10px)"
-    fxFlex.lt-md="0 1 calc(50% - 10px)"
+    fxFlex="0 1 calc(25% - 25px)"
+    fxFlex.lt-md="0 1 calc(50% - 25px)"
     fxFlex.lt-sm="100%"
   >
     <mat-card-header>
-      <mat-card-title>Case confirmed:</mat-card-title>
-      <mat-card-subtitle></mat-card-subtitle>
+      <mat-icon
+        mat-card-avatar
+        svgIcon="es"
+        aria-hidden="false"
+        aria-label="mexico flag icon"
+      ></mat-icon>
+      <mat-card-title>{{ country.Country | titlecase }}</mat-card-title>
+      <mat-card-subtitle>{{ country.Date | date }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p class="display-4 text-center">
-        {{ summary.Global.TotalConfirmed | number }}
-      </p>
+      <p>{{ country.TotalConfirmed | number }}</p>
+      <p>{{ country.TotalRecovered | number }}</p>
+      <p>{{ country.TotalDeaths | number }}</p>
     </mat-card-content>
   </mat-card>
 
   <mat-card
     [class.mat-elevation-z6]="true"
     class="my-2"
-    fxFlex="0 1 calc(33.3% - 10px)"
-    fxFlex.lt-md="0 1 calc(50% - 10px)"
+    fxFlex="0 1 calc(25% - 25px)"
+    fxFlex.lt-md="0 1 calc(50% - 25px)"
     fxFlex.lt-sm="100%"
   >
     <mat-card-header>
-      <mat-card-title>Case Recovered: </mat-card-title>
-      <mat-card-subtitle></mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content
-      ><p class="display-4 text-center">
-        {{ summary.Global.TotalRecovered | number }}
-      </p>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card
-    [class.mat-elevation-z6]="true"
-    class="my-2"
-    fxFlex="0 1 calc(33.3% - 10px)"
-    fxFlex.lt-md="0 1 calc(50% - 10px)"
-    fxFlex.lt-sm="100%"
-  >
-    <mat-card-header>
-      <mat-card-title>Case of Deaths: </mat-card-title>
-      <mat-card-subtitle></mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content
-      ><p class="display-4 text-center">
-        {{ summary.Global.TotalDeaths | number }}
-      </p>
-    </mat-card-content>
-  </mat-card>
-</div>
-
-<p class="mat-h2 text-center">
-  {{ country.Country | titlecase }}
-</p>
-
-<div
-  fxLayout="row wrap"
-  fxLayout.lt-sm="column"
-  fxLayoutGap="10px"
-  fxLayoutAlign="flex-start"
->
-  <mat-card
-    [class.mat-elevation-z6]="true"
-    class="my-2"
-    fxFlex="0 1 calc(33.3% - 10px)"
-    fxFlex.lt-md="0 1 calc(50% - 10px)"
-    fxFlex.lt-sm="100%"
-  >
-    <mat-card-header>
-      <mat-card-title>Case confirmed:</mat-card-title>
-      <mat-card-subtitle></mat-card-subtitle>
+      <fa-icon mat-card-avatar [icon]="world" size="3x"></fa-icon>
+      <mat-card-title>Global</mat-card-title>
+      <mat-card-subtitle>{{ summary.Date | date }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p class="display-4 text-center">{{ country.TotalConfirmed | number }}</p>
+      <p>{{ summary.Global.TotalConfirmed | number }}</p>
+      <p>{{ summary.Global.TotalRecovered | number }}</p>
+      <p>{{ summary.Global.TotalDeaths | number }}</p>
     </mat-card-content>
   </mat-card>
-
   <mat-card
     [class.mat-elevation-z6]="true"
     class="my-2"
-    fxFlex="0 1 calc(33.3% - 10px)"
-    fxFlex.lt-md="0 1 calc(50% - 10px)"
+    fxFlex="0 1 calc(50% - 25px)"
+    fxFlex.lt-md="0 1 calc(100% - 25px)"
     fxFlex.lt-sm="100%"
   >
     <mat-card-header>
-      <mat-card-title>Case Recovered: </mat-card-title>
+      <mat-card-title>Timeline</mat-card-title>
       <mat-card-subtitle></mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content
-      ><p class="display-4 text-center">
-        {{ country.TotalRecovered | number }}
-      </p>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card
-    [class.mat-elevation-z6]="true"
-    class="my-2"
-    fxFlex="0 1 calc(33.3% - 10px)"
-    fxFlex.lt-md="0 1 calc(50% - 10px)"
-    fxFlex.lt-sm="100%"
-  >
-    <mat-card-header>
-      <mat-card-title>Case of Deaths: </mat-card-title>
-      <mat-card-subtitle></mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content
-      ><p class="display-4 text-center">{{ country.TotalDeaths | number }}</p>
-    </mat-card-content>
+    <mat-card-content> </mat-card-content>
   </mat-card>
 </div>
