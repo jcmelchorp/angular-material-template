@@ -3,13 +3,9 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "site":"af-templates",
+    "site": "coronavirus-mx",
     "public": "dist/angular-material-template",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",

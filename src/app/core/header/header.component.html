@@ -7,7 +7,8 @@
         </button>
         <!--buttons disappear on Xs devices-->
         <div *ngIf="!deviceXs" fxLayout="row">
-          <button mat-button [routerLink]="['module-two']">Module 2</button>
+          <!--           <button mat-button [routerLink]="['module-two']">Module 2</button>
+ -->
           <button mat-button [routerLink]="['statistics/current']">
             Datos
           </button>
@@ -33,7 +34,8 @@
     </mat-toolbar-row>
     <!--mat-toolbar-row displayed on Xs devices-->
     <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between center">
-      <button mat-button [routerLink]="['module-two']">Module 2</button>
+      <!--       <button mat-button [routerLink]="['module-two']">Module 2</button>
+ -->
       <button mat-button [routerLink]="['statistics']">Datos</button>
     </mat-toolbar-row>
     <!---->
