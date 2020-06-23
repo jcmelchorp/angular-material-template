@@ -2,10 +2,13 @@
   <label class="display-4">
     Statistical panel
   </label>
-  <p class="mat-h1">Statistical panel for COVID-19 disease</p>
+  <h1 class="mat-h1">Statistical panel for COVID-19 disease</h1>
 </div>
-
+<div fxLayoutAlign="center center">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
 <div
+  *ngIf="!isLoading"
   class="pl-3 pr-3"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"

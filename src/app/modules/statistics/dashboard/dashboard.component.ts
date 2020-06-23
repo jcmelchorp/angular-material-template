@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   country: Countries;
   date: string;
   destroy$: Subject<boolean> = new Subject<boolean>();
+  isLoading: boolean = true;
   constructor(private _apiService: ApiService) {}
 
   ngOnInit() {
@@ -35,6 +36,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.country = this.countries[109];
         this.date = this.summary.Date;
         console.log(this.country);
+        this.isLoading = !this.isLoading;
       });
   }
 
